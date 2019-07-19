@@ -9,7 +9,7 @@ const globalsReducer = (state = initialState, action) => {
         case GET_GLOBALS_SUCCESS: {
             return {
                 ...state,
-                globals: action.payload,
+                globals: action.payload.menu,
             }
         }
 
