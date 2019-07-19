@@ -1,0 +1,112 @@
+.slider {
+    width: 65%;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+    padding: 16px 20px;
+    background-color: #fff;
+    display: flex;
+
+    .container {
+        position: relative;
+        top: 0;
+        right: 0;
+
+        .slide {
+            position: relative;
+            float: left;
+
+            .name {
+                display: flex;
+                flex-direction: column;
+
+                .name-span {
+                    font-size: 32px;
+                    font-weight: bold;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.5;
+                    letter-spacing: normal;
+                }
+
+                .position-span {
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    color: #a5a5a5;
+                }
+            }
+
+            .comment {
+                width: 100%;
+
+                 p {
+                    font-size: 1em;
+                    font-weight: bold;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.33;
+                    letter-spacing: normal;
+                 }
+            }
+        }
+    }
+
+    .controls {
+        position: absolute;
+        right: -3em;
+        bottom: -1em;
+        display: flex;
+        z-index: 9;
+
+        div {
+            width: 120px;
+            display: flex;
+            background-color: $blue-color;
+            padding: 0.5em 0 0.5em 0;
+        }
+        .indicator {
+            font-family: $font-cormorant;
+            font-size: 1.5em;
+            font-weight: 600;
+            font-style: italic;
+            font-stretch: normal;
+            line-height: 1;
+            letter-spacing: 0.69px;
+            justify-content: center;
+            margin-right: 0.05em;
+            span {
+                color: #fff;
+            }
+        }
+        .arrows {
+            justify-content: space-around;
+            align-items: center;
+
+            div {
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
+            }
+            
+            i {
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media (min-width: 62rem) {
+    .slide {
+        display: flex;
+        justify-content: row;
+
+        .comment {
+            width: 60% !important;
+            margin-left: 9em;
+        }
+    }
+}
