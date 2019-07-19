@@ -1,0 +1,15 @@
+html, body {
+    font-family: $font-stack;
+    height: 100%;
+    width: 100%;
+    margin: 0 !important;
+    background-color: $back-color;
+}
+
+header {
+    background-color: #fff;
+}
+
+.content {
+    background-color: $back-color;
+}

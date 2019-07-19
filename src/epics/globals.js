@@ -1,7 +1,7 @@
 import { ActionsObservable as Observable } from 'redux-observable';
 import axios from 'axios';
 import { ofType } from 'redux-observable';
-import { throttleTime, flatMap } from 'rxjs/operators';
+import { throttleTime, flatMap, catchError } from 'rxjs/operators';
 import {
     GET_GLOBALS,
 } from '../constants/actions';
@@ -11,13 +11,11 @@ export const getGlobalsEpic = (action$, store) => action$.pipe(
     ofType(GET_GLOBALS),
     throttleTime(1000),
     flatMap(() => {
-        return Observable.fromPromise(axios.get('https://raw.githubusercontent.com/Bernabe-Felix/Bellotero/master/app.json'))
-        .flatMap(response => Observable.fromPromise(response.json())
-            .flatMap(({ menu }) => Observable.concat(
-                    Observable.of(getGlobalsSuccess(menu)),
-                ),
-            )
+        return Observable.from(axios.get('https://raw.githubusercontent.com/Bernabe-Felix/Bellotero/master/app.json')).pipe(
+            flatMap(({ data: { menu } }) => {
+                return Observable.of(getGlobalsSuccess(menu));
+            }),
+            catchError(() => Observable.of(getGlobalsFailed('Oops... an error occured please try again later'))),
         )
-        .catch(() => Observable.of(getGlobalsFailed('Oops... an error occured please try again later')));
     }),
 );

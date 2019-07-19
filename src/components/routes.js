@@ -4,33 +4,26 @@ import {
   Switch,
 } from 'react-router';
 
+import NavBar from '../containers/utils/navBar';
 import App from './App';
 
-export default class Routes extends React.Component {  
+export default class Routes extends React.Component {
+    componentDidMount() {
+      const { getGlobals } = this.props;
+      getGlobals();
+    }
+
     render() {
-      return (
-        <Route render={() => (
+        const { globals: { items = [] } } = this.props;
+        return (
+            <NavBar items={items}>
                 <Switch>
                     <Route
-                        exact
                         path={'/'}
                         component={App}
                     />
-                    {/*
-                        <Route
-                        exact
-                        path={URLS.testimonials}
-                        component={Clients}
-                    />
-                    <Route
-                        exact
-                        path={URLS.configurator}
-                        component={Studies}
-                    />
-                    */}
                 </Switch>
-        )}
-        />
-      );
+            </NavBar>
+        );
     }
-  }
+}

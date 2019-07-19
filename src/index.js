@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import './styles/index.scss';
+import 'font-awesome/css/font-awesome.min.css'
 import Routes from './containers/routes';
 import * as serviceWorker from './serviceWorker';
 import { configureStore } from './store';
