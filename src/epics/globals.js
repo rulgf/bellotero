@@ -12,9 +12,11 @@ export const getGlobalsEpic = (action$, store) => action$.pipe(
     throttleTime(1000),
     flatMap(() => {
         return Observable.fromPromise(axios.get('https://raw.githubusercontent.com/Bernabe-Felix/Bellotero/master/app.json'))
-        .flatMap(({ menu }) => Observable.concat(
-                Observable.of(getGlobalsSuccess(menu)),
-            ),
+        .flatMap(response => Observable.fromPromise(response.json())
+            .flatMap(({ menu }) => Observable.concat(
+                    Observable.of(getGlobalsSuccess(menu)),
+                ),
+            )
         )
         .catch(() => Observable.of(getGlobalsFailed('Oops... an error occured please try again later')));
     }),
