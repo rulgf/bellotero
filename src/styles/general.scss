@@ -1,0 +1,39 @@
+html, body {
+    font-family: $font-stack;
+    height: 100%;
+    width: 100%;
+    margin: 0 !important;
+    background-color: $back-color;
+}
+
+.root, #root{
+    height: 100%;
+}
+
+.content {
+    height: calc(100% - 65px);
+}
+
+header {
+    background-color: #fff;
+}
+
+.content {
+    background-color: $back-color;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0.77px;
+    color: #fff;
+    line-height: 1.4;
+    margin: 0 auto 80px 0;
+
+    span {
+        background-color: $blue-color;
+        padding: 0 0.125em;
+    }
+}

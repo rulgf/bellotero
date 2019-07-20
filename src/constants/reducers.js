@@ -1,0 +1,4 @@
+export const DATA_GLOBALS = 'DATA_GLOBALS';
+export const DATA_TESTIMONIALS = 'DATA_TESTIMONIALS';
+export const DATA_CONFIGURATOR = 'DATA_CONFIGURATOR';
+export const UI_APP = 'UI_APP';

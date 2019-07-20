@@ -1,0 +1,78 @@
+.configurator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 10% 12%;
+
+    .left-box {
+        flex: 1;
+
+        .title {
+            margin-bottom: 1em; 
+        }
+
+        .description {
+            font-size: 16px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.5;
+            letter-spacing: normal;
+        }
+    }
+    .right-box {
+        flex: 2;
+
+        .results {
+            margin-top: 5.375em;
+            display: flex;
+            justify-content: space-between;
+
+            .result {
+                color: $blue-color;
+
+                .currency {
+                    font-size: 36px;
+                    font-weight: 500;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.11;
+                    letter-spacing: 0.77px;
+                }
+
+                .total {
+                    font-size: 72px;
+                    font-weight: 500;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1;
+                    letter-spacing: 1px;
+                }
+            }
+
+            .result-desc {
+                font-size: 14px;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: normal;
+                letter-spacing: normal;
+            }
+        }
+    }
+}
+
+@media (min-width: 62rem) {
+    .configurator {
+        display: flex;
+        flex-direction: row !important;
+        padding: 0 12% !important;
+
+        .right-box {
+            flex: 2;
+            margin-left: 13em;
+        }
+    }
+}
