@@ -52,7 +52,6 @@ export default class Slider extends React.Component {
     }
 
     goToPrevSlide = () => {
-        const { slides } = this.props;
         this.setState(prevState => {
             if (prevState.slidePosition - 1 >= 0) {
                 return {

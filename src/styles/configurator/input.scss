@@ -1,0 +1,55 @@
+.calculator-input {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4.125em;
+    margin-bottom: 1.5em;
+
+    .input-desc {
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        max-width: 8.27em;
+    }
+}
+
+.funding-summary,
+.funding-summary * {
+    font-size: 1.125rem;
+    line-height: 2.75rem;
+    font-weight: bold;
+}
+
+.input {
+    border: 1px solid #dcdcdc;
+    box-shadow: inset 0 2px rgba(0,0,0,.025);
+    width: 11.875em;
+
+    .prefixed-input {
+        position: relative;
+    }
+    .currency-prefixed {
+        position: absolute;
+        line-height: inherit;
+        padding-left: .5em
+    }
+    .currency-prefixed-input {
+        color: #424242;
+        background-color: transparent;
+        font-weight: bold;
+        border-width: 0;
+        width: 100%;
+        text-align: right;
+    }
+}
+
+.small-input {
+    width: 4.2em;
+}
+
+.span-pad {
+    padding-left: 1.5em;
+    width: 88% !important;
+}

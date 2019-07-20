@@ -1,5 +1,4 @@
 .slider {
-    width: 65%;
     margin: 0 auto;
     position: relative;
     box-sizing: border-box;
@@ -58,7 +57,7 @@
     .controls {
         position: absolute;
         right: -3em;
-        bottom: -1em;
+        bottom: -1.5em;
         display: flex;
         z-index: 9;
 

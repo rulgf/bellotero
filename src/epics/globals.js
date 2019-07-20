@@ -6,12 +6,13 @@ import {
     GET_GLOBALS,
 } from '../constants/actions';
 import { getGlobalsSuccess, getGlobalsFailed } from '../actions/globals';
+import { globalsURL } from '../constants/urls';
 
 export const getGlobalsEpic = (action$, store) => action$.pipe(
     ofType(GET_GLOBALS),
     throttleTime(1000),
     flatMap(() => {
-        return Observable.from(axios.get('https://raw.githubusercontent.com/Bernabe-Felix/Bellotero/master/app.json')).pipe(
+        return Observable.from(axios.get(globalsURL)).pipe(
             flatMap(({ data: { menu } }) => {
                 return Observable.of(getGlobalsSuccess(menu));
             }),

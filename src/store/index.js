@@ -4,6 +4,7 @@ import {
     createStore,
 } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import epics from '../epics';
 import { reducers } from '../reducers';
@@ -14,17 +15,14 @@ const epicMiddleware = createEpicMiddleware();
 // Set initial state
 const initialState = {};
 
-// Apply Middleware
-const enhancer = compose(
-    applyMiddleware(epicMiddleware),
-);
-
 // Configure Store
 export function configureStore() {
     const store = createStore(
         reducers,
         initialState,
-        enhancer,
+        composeWithDevTools(
+            applyMiddleware(epicMiddleware),
+        )
     );
     epicMiddleware.run(epics);
     return store;

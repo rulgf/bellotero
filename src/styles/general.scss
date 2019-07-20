@@ -21,3 +21,19 @@ header {
 .content {
     background-color: $back-color;
 }
+
+.title {
+    font-size: 36px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0.77px;
+    color: #fff;
+    line-height: 1.4;
+    margin: 0 auto 80px 0;
+
+    span {
+        background-color: $blue-color;
+        padding: 0 0.125em;
+    }
+}

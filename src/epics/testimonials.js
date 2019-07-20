@@ -6,12 +6,13 @@ import {
     GET_TESTIMONIALS,
 } from '../constants/actions';
 import { getTestimonialsSuccess, getTestimonialsFailed } from '../actions/testimonials';
+import { testimonialsURL } from '../constants/urls';
 
 export const getTestimonialsEpic = (action$, store) => action$.pipe(
     ofType(GET_TESTIMONIALS),
     throttleTime(1000),
     flatMap(() => {
-        return Observable.from(axios.get('https://raw.githubusercontent.com/Bernabe-Felix/Bellotero/master/page1.json')).pipe(
+        return Observable.from(axios.get(testimonialsURL)).pipe(
             flatMap(({ data: { slider } }) => {
                 return Observable.of(getTestimonialsSuccess(slider));
             }),

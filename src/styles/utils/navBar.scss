@@ -1,9 +1,9 @@
 .flex-nav {
     margin: 0 1em 0 1em;
-    padding: 0.5em 0 0.5em;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
+    height: 4em;
 }
   
 .column-4 {
@@ -43,20 +43,30 @@ i {
     font-stretch: normal;
     line-height: normal;
     letter-spacing: 0.3px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.current {
+    border-top: 2px solid $blue-color;
 }
   
 .flex-nav {
     #icon {
         display: flex;
     }
-    ul.active {
+    #phone-nav.active {
         display: flex;
         background: #fff;
-        li {
+        top: 4em;
+
+        .nav-item {
             margin: 0.5rem 0;
         }
     }
-    ul {
+    #phone-nav {
         position: absolute;
         z-index: 1;
         flex-wrap: wrap;
@@ -64,9 +74,7 @@ i {
         display: none;
         width: 100%;
         left: 0;
-        padding: 1rem 0;
         text-align: center;
-        margin-top: 2rem;
     }
 }
     
@@ -83,14 +91,12 @@ i {
     }
     .flex-nav {
         margin: 0 9em 0 9em;
-        padding: 0.5em 0 0.5em;
 
-        ul {
+        #phone-nav {
             display: flex;
             flex-direction: row;
             position: relative;
             justify-content: flex-end;
-            margin: auto;
         }
     }
 }
