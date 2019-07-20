@@ -6,12 +6,12 @@ This project was created with Create-React-App.
 
 ## Libraries
 
-⋅⋅*ReactJS.
-⋅⋅*React-Router. 
-⋅⋅*Redux.
-⋅⋅*Redux-Observable.
-⋅⋅*Sass.
-⋅⋅*RC-Slider.
+- ReactJS.
+- React-Router. 
+- Redux.
+- Redux-Observable.
+- Sass.
+- RC-Slider.
 
 ## How to Run
 
