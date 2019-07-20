@@ -4,7 +4,6 @@ import { DATA_GLOBALS, UI_APP } from '../constants/reducers';
 import RoutesComponent from '../components/routes';
 
 import { getGlobals } from '../actions/globals';
-import { getTestimonials } from '../actions/testimonials'
 
 const mapStateToProps = state => ({
     errorMessage: state[UI_APP].errorMessage,
@@ -14,7 +13,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     getGlobals: () => dispatch(getGlobals()),
-    getTestimonials: () => dispatch(getTestimonials()),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RoutesComponent));

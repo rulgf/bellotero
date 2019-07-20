@@ -17,13 +17,13 @@ export default class NavBar extends React.Component {
       return items.map(i => {
         const current = location.pathname === `/${i.route}`;
         return (
-            <li
+            <div
                 key={`${i.text}-${i.route}`}
                 className={`nav-item ${current ? 'current' : ''}`}
                 onClick={() => { goToView(i.route); }}
             >
                 {i.text}
-            </li>
+            </div>
         )
       })
     }
@@ -40,9 +40,9 @@ export default class NavBar extends React.Component {
                         <span className='toggle' onClick={() => { navToggle(); }}>
                             <i className='fa fa-bars'></i>
                         </span>
-                        <ul id='phone-nav'>
+                        <div id='phone-nav'>
                             {this.buildList()}
-                        </ul>
+                        </div>
                     </div>
                 </nav>
             </header>

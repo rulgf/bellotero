@@ -7,13 +7,13 @@ import {
 import NavBar from '../containers/utils/navBar';
 import App from './App';
 import Testimonials from '../containers/testimonials/testimonials';
+import Configurator from '../containers/configurator/configurator';
 
 export default class Routes extends React.Component {
     // Get Json from async calls
     componentDidMount() {
-      const { getGlobals, getTestimonials } = this.props;
+      const { getGlobals } = this.props;
       getGlobals();
-      getTestimonials();
     }
 
     // Build the Routes from the globals map
@@ -27,6 +27,9 @@ export default class Routes extends React.Component {
             switch(i.text) {
                 case 'Testimonial':
                     routeComponent = Testimonials;
+                    break;
+                case 'Configurator':
+                    routeComponent = Configurator;
                     break;
                 default:
                     routeComponent = App; 
@@ -52,7 +55,7 @@ export default class Routes extends React.Component {
                     <Route
                         exact
                         path={'/'}
-                        component={App}
+                        component={Testimonials}
                     />
                     {this.buildRoutes()}
                 </Switch>
